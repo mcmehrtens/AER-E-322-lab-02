@@ -119,8 +119,8 @@
 
 \title{\textbf{Iowa State University
 \\{\Large Aerospace Engineering}}}
-\subtitle{AER E 322 Lab <lab number>\\
-		  <lab name>}
+\subtitle{AER E 322 Lab 2\\
+		  Stress Concentration}
 \author{Matthew Mehrtens, Peter Mikolitis, and Natsuki Oda}
 
 \newcommand{\etal}{\textit{et al}., }
@@ -134,7 +134,7 @@
 \fancyhead{}\fancyfoot{} % clears the headers/footers
 \fancyhead[L]{\textbf{AER E 322}}
 \fancyhead[C]{\textbf{Aerospace Structures Laboratory Summary}\\
-			  \textbf{Lab <lab number> <lab name>}\\
+			  \textbf{Lab 2 Stress Concentration}\\
 			  Section 4 Group 2\\
 			  Matthew Mehrtens, Peter Mikolitis, and Natsuki Oda\\
 			  \today}
@@ -145,19 +145,35 @@
 \maketitle
 \tableofcontents
 \section{Introduction} \label{introduction}
-% TODO
+This lab will demonstrate how internal stresses change due to stress concentrators using a special material with photoelastic properties. To view the stresses, we will use a special tool called a light-field circular polariscope (Figure \ref{fig:apparatus}). The light-field circular polariscope utilizes two polarized sheets that visualize the internal stresses, specifically the difference between the principal stresses, $\sigma_{p1}-\sigma_{p2}$. To examine the effects of different types of stress concentrators, we will test three different samples: a notched sample, an arched sample, and a sample with a hole.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=4in]{images/Apparatus}
+\caption{The light-field circular polariscope. Image from the Lecture 2 Notes. Copyright 2023 by Thomas Chiou.}
+\label{fig:apparatus}
+\end{figure}
+
+Using MATLAB, we will analyze the stress equations for a sample with a hole in it. Our MATLAB scripts will reveal the maxima and minima for the three different types of internal stresses: $\sigma_r$, $\sigma_\theta$, and $\sigma_{r\theta}$. Additionally, we will plot the different stress distributions and the difference between the principal stresses. We will compare the theoretical plot of the principal stress difference with the pictures gathered from the experiment.
 
 \section{Objectives} \label{objectives}
-% TODO
+To observe how internal stress changes due to stress discontinuities, also known as stress concentrators, and to analyze theoretical internal stresses due to stress concentrators using MATLAB. An example of stress concentrators is shown in Figure \ref{fig:stress_concentrators}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=6in]{images/Stress_Concentrators}
+\caption{An example of stress discontinuities or concentrators. Image from A. Higdon et al., \textit{Mechanics of Materials}, 4th ed, 1985.}
+\label{fig:stress_concentrators}
+\end{figure}
 
 \section{Hypothesis} \label{hypothesis}
-% TODO
+Due to the photoelastic nature of the material and the polarized sheets, we will be able to clearly photograph the internal stress patterns around the stress concentrators. The difference between the principal stresses will be higher closer to the edges of the discontinuities.
 
 \section{Work Assignments} \label{work_assignments}
 Refer to Table \ref{table:work_assignments} for the distribution of work during this lab.
 
 \begin{table}[!htbp]
-\caption{Work assignments for AER E 322 Lab <lab number>.}
+\caption{Work assignments for AER E 322 Lab 2.}
 \begin{center}
 	\begin{tabular}{| c | c | c | c |}
 		\hline
@@ -165,45 +181,45 @@ Refer to Table \ref{table:work_assignments} for the distribution of work during 
 		\hline
 		\multicolumn{4}{| c |}{\textit{Lab Work}} \\
 		\hline
-		Date Recording & & & \\
+		Date Recording & X & X & X \\
 		\hline
-		Exp. Setup & & & \\
+		Exp. Setup & X & X & X \\
 		\hline
-		Exp. Work & & & \\
+		Exp. Work & X & X & X \\
 		\hline
-		Exp. Clean-Up & & & \\
+		Exp. Clean-Up & X & X & X \\
 		\hline
 		\multicolumn{4}{| c |}{\textit{Post Lab}} \\
 		\hline
+		Question 1 & X & & \\
+		\hline
+		Question 2 & X & X & \\
+		\hline
+		Question 3 & X & X & X \\ 
+		\hline
 		\multicolumn{4}{| c |}{\textit{Report}} \\
 		\hline
-		Introduction & & & \\
+		Introduction & & X & \\
 		\hline
-		Objectives & & & \\
+		Objectives & & X & \\
 		\hline
-		Hypothesis & & & \\
+		Hypothesis & & X & \\
 		\hline
-		Variables & & & \\
+		Materials & & X & \\
 		\hline
-		Materials & & & \\
+		Apparatus & & & X \\
 		\hline
-		Apparatus & & & \\
+		Procedures & & & X \\
 		\hline
-		Procedures & & & \\
+		Data & X & X & X \\
 		\hline
-		Data & & & \\
+		Analysis & X & X & X \\
 		\hline
-		Analysis & & & \\
+		Conclusion & X & X & \\
 		\hline
-		Conclusion & & & \\
+		Revisions & X & X & \\
 		\hline
-		References & & & \\
-		\hline
-		Appendix & & & \\
-		\hline
-		Revisions & & & \\
-		\hline
-		Editing & & & \\
+		Editing & X & & \\
 		\hline
 	\end{tabular}
 \end{center}
