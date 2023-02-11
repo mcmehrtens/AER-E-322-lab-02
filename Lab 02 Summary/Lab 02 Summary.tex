@@ -146,7 +146,7 @@
 \maketitle
 \tableofcontents
 \section{Introduction} \label{introduction}
-This lab will demonstrate how internal stresses change due to stress concentrators using a special material with photoelastic properties. To view the stresses, we will use a special tool called a light-field circular polariscope (Figure \ref{fig:apparatus}). The light-field circular polariscope utilizes two polarized sheets that visualize the internal stresses, specifically the difference between the principal stresses, $\sigma_{p1}-\sigma_{p2}$. To examine the effects of different types of stress concentrators, we will test three different samples: a notched sample, an arched sample, and a sample with a hole.
+This lab will demonstrate how internal stresses change due to stress concentrators using a special material with photoelastic properties. To view the stresses, we will use a special tool called a light-field circular polariscope (Figure \ref{fig:apparatus}). The light-field circular polariscope utilizes two polarized sheets that visualize the internal stresses, specifically the difference between the principal stresses, $\sigma_{p1}-\sigma_{p2}$. To examine the effects of different stress concentrators, we will test three samples: a notched sample, an arched sample, and a sample with a hole.
 
 \begin{figure}[htbp]
 \centering
@@ -155,10 +155,10 @@ This lab will demonstrate how internal stresses change due to stress concentrato
 \label{fig:apparatus}
 \end{figure}
 
-Using MATLAB, we will analyze the stress equations for a sample with a hole in it. Our MATLAB scripts will reveal the maxima and minima for the three different types of internal stresses: $\sigma_r$, $\sigma_\theta$, and $\sigma_{r\theta}$. Additionally, we will plot the different stress distributions and the difference between the principal stresses. We will compare the theoretical plot of the principal stress difference with the pictures gathered from the experiment.
+Using MATLAB, we will analyze the stress equations for a sample with a hole. Our MATLAB scripts will reveal the maxima and minima for the three different types of internal stresses: $\sigma_r$, $\sigma_\theta$, and $\sigma_{r\theta}$. Additionally, we will plot the different stress distributions and the difference between the principal stresses. We will compare the theoretical plot of the principal stress difference with the pictures gathered from the experiment.
 
 \section{Objectives} \label{objectives}
-To observe how internal stress changes due to stress discontinuities, also known as stress concentrators, and to analyze theoretical internal stresses due to stress concentrators using MATLAB. An example of stress concentrators is shown in Figure \ref{fig:stress_concentrators}.
+To observe how internal stress changes due to stress discontinuities, also known as stress concentrators, and to analyze theoretical internal stresses due to stress concentrators using MATLAB. An example of a stress concentrator is shown in Figure \ref{fig:stress_concentrators}.
 
 \begin{figure}[htbp]
 \centering
@@ -168,7 +168,7 @@ To observe how internal stress changes due to stress discontinuities, also known
 \end{figure}
 
 \section{Hypothesis} \label{hypothesis}
-Due to the photoelastic nature of the material and the polarized sheets, we will be able to clearly photograph the internal stress patterns around the stress concentrators. The difference between the principal stresses will be higher closer to the edges of the discontinuities.
+Due to the photoelastic nature of the material and the polarized sheets, we can photograph the internal stress patterns around the stress concentrators. The difference between the principal stresses will be higher closer to the edges of the discontinuities.
 
 \section{Work Assignments} \label{work_assignments}
 Refer to Table \ref{table:work_assignments} for the distribution of work during this lab.
@@ -258,21 +258,21 @@ The fully loaded samples are shown below in Figures \ref{fig:hole_3}, \ref{fig:n
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=4in]{images/hole_3}
-\caption{The light-field circular polariscope set up with a fully loaded ``hole'' sample.}
+\caption{The light-field circular polariscope setup with a fully loaded ``hole'' sample.}
 \label{fig:hole_3}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=4in,angle=180]{images/notch_3}
-\caption{The light-field circular polariscope set up with a fully loaded ``notch'' sample.}
+\caption{The light-field circular polariscope setup with a fully loaded ``notch'' sample.}
 \label{fig:notch_3}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=4in,angle=180]{images/arch_4}
-\caption{The light-field circular polariscope set up with a fully loaded ``arch'' sample.}
+\caption{The light-field circular polariscope setup with a fully loaded ``arch'' sample.}
 \label{fig:arch_4}
 \end{figure}
 
@@ -286,7 +286,7 @@ The normalized stress equations for a sample with a hole in it, derived by divid
 \frac{\tau_{r\theta}}{\sigma_0}&=\frac{1}{2}\left(1+\frac{2a^2}{r^2}-\frac{3a^4}{r^4}\right)\sin2\theta
 \end{align}
 
-Given $\theta=\qty{0}{\degree}$ and an arbitrary value for $a$, we can graph the normalized stress curves with respect to $r$ as shown in Figures \ref{fig:norm_sigma_r}, \ref{fig:norm_sigma_theta}, and \ref{fig:norm_tau_rtheta}. The domain of the graphs ranges from $r=a$ to $r=5a$.
+Given $\theta=\qty{0}{\degree}$ and an arbitrary value for $a$, we can graph the normalized stress curves with respect to $r$, as shown in Figures \ref{fig:norm_sigma_r}, \ref{fig:norm_sigma_theta}, and \ref{fig:norm_tau_rtheta}. The domain of the graphs ranges from $r=a$ to $r=5a$.
 
 \begin{figure}[htbp]
     \centering
@@ -322,7 +322,7 @@ tau_rtheta_n = 0 [] @ r = 2 [in]
 \end{verbatim}
 \end{tcolorbox}
 
-From this output, we observe the maximum value of the normalized $\sigma_\theta$ curve is \num{3}. Furthermore, the stress concentration factor is defined as
+From this output, we observe that the maximum value of the normalized $\sigma_\theta$ curve is \num{3}. Furthermore, the stress concentration factor is defined as
 
 \begin{align}
 K\coloneqq\frac{\sigma_\text{max}\text{ or }\tau_\text{max}}{\sigma_0} \label{eqn:def_K}
@@ -342,7 +342,7 @@ K&=\frac{3\sigma_0}{\sigma_0} \\
 K&=3
 \end{align}
 
-In Figures \ref{fig:norm_sigma_r} and \ref{fig:norm_sigma_theta}, we note that the stress rapidly decreases as the measured point of stress moves further from the boundary of the hole. This matches hypothetical observations that the stress if highest and most magnified right at the boundary of discontinuities within a material. In other words, this significantly magnified stress near the surface of a material discontinuity is why nominal imperfections can grow to be catastrophic.
+Figures \ref{fig:norm_sigma_r} and \ref{fig:norm_sigma_theta}, show that the stress rapidly decreases as the measured point of stress moves further from the boundary of the hole. This matches hypothetical observations that the stress magnified at the boundary of discontinuities within a material. In other words, this significantly magnified stress near the surface of a material discontinuity is why nominal imperfections can grow to be catastrophic.
 
 \textbf{Question 2:}
 
@@ -360,7 +360,7 @@ As shown in Equation \ref{eqn:theta}, at the boundary of the hole, the angles \q
 
 \textbf{Question 3:}
 
-By substituting in arbitrary values for $\sigma_0$ and $a$, \eg $\sigma_0=1$ and $a=2$, we can graph the stress distributions of $\sigma_r$, $\sigma_\theta$, and $\tau_{r\theta}$. These graphs, generated in MATLAB, are shown in Figures \ref{fig:sigma_r}, \ref{fig:sigma_theta}, and \ref{fig:tau_rtheta}.
+By substituting arbitrary values for $\sigma_0$ and $a$, \eg $\sigma_0=1$ and $a=2$, we can graph the stress distributions of $\sigma_r$, $\sigma_\theta$, and $\tau_{r\theta}$. These graphs, generated in MATLAB, are shown in Figures \ref{fig:sigma_r}, \ref{fig:sigma_theta}, and \ref{fig:tau_rtheta}.
 
 \begin{figure}[htbp]
     \centering
@@ -385,7 +385,7 @@ By substituting in arbitrary values for $\sigma_0$ and $a$, \eg $\sigma_0=1$ and
 \label{fig:tau_rtheta}
 \end{figure}
 
-Using the values of $\sigma_r$, $\sigma_\theta$, and $\tau_{r\theta}$ from these MATLAB graphs, we can calculate the difference in principal stress, $\sigma_{p1}-\sigma_{p2}$, with the equation
+Using the values of $\sigma_r$, $\sigma_\theta$, and $\tau_{r\theta}$ from these MATLAB graphs, we can calculate the difference in the principal stresses, $\sigma_{p1}-\sigma_{p2}$, with the equation
 
 \begin{align}
 \sigma_{p1}-\sigma_{p2}=2\sqrt{\left(\frac{\sigma_r-\sigma_\theta}{2}\right)^2+\tau_{r\theta}^2}
@@ -404,6 +404,6 @@ By comparing Figure \ref{fig:principal_stress_diff} to our experimental photo of
 \qty{180}{\degree}$ in Figure \ref{fig:principal_stress_diff} compared to the stress rings visible on the top and bottom of the hole (closest to the long edges) in Figure \ref{fig:hole_3}. You can also see in Figure \ref{fig:hole_3} the development of the stresses shown at $\theta=\qty{90}{\degree},\qty{240}{\degree}$ of the hole in Figure \ref{fig:principal_stress_diff}.
 
 \section{Conclusion} \label{conclusion}
-In this lab, we found used a light-field circular polariscope with three different types of samples to visually demonstrate the effect of stress concentrators on internal stress. Additionally, using MATLAB, we analyzed the normalized internal stress curves, and used the \texttt{imagesc} function to plot colored stress distributions that matched the stress rings we observed in our experimental photographs.
+In this lab, we used a light-field circular polariscope with three different types of samples to visually demonstrate the effect of stress concentrators on internal stress. Using MATLAB, we analyzed the normalized internal stress curves and used the \texttt{imagesc} function to plot colored stress distributions that matched the stress rings we observed in our experimental photographs.
 
 \end{document}
