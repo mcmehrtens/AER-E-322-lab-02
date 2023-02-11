@@ -4,7 +4,7 @@ clear,clc,close all
 
 % Definitions
 theta = 0; % [rad]
-a = 25; % [in]
+a = 2; % [in]
 
 r = a:0.01:5 * a; % [in]
 

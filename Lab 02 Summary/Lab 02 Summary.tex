@@ -45,6 +45,7 @@
 \usepackage{siunitx} % SI units
 \usepackage{csquotes} % Display Quote
 \usepackage{microtype} % Better line breaks
+\usepackage{mathtools} % Gives more math symbols
 
 \definecolor{commentsColor}{rgb}{0.497495, 0.497587, 0.497464}
 \definecolor{keywordsColor}{rgb}{0.000000, 0.000000, 0.635294}
@@ -227,21 +228,182 @@ Refer to Table \ref{table:work_assignments} for the distribution of work during 
 \end{table}
 
 \section{Materials} \label{materials}
-% TODO
+The materials required for this lab are as follows:
+
+\begin{itemize}
+	\item Light-field circular polariscope
+	\item Sample with hole
+	\item Sample with notch
+	\item Sample with arch
+\end{itemize}
 
 \section{Apparatus} \label{apparatus}
-% TODO
+Figure \ref{fig:notch_2} shows the apparatus with the notched sample loaded with moderate forces.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=4in,angle=180]{images/notch_2}
+\caption{The light-field circular polariscope set up with a semi-loaded notched sample.}
+\label{fig:notch_2}
+\end{figure}
 
 \section{Procedures} \label{procedures}
-% TODO
+We will observe three samples in this lab. To insert a sample into the polariscope, remove the top polarizer and hold the sample in place as you tighten the knobs around the sample. Be careful with the polarizers and samples because they scratch easily. The sample will be ``floating'' between the two polarizers, held by compression with the knobs. The knobs should be evenly spaced around each sample.
+
+Slide the top polarizer back into place, and if there are any fringe patterns visible, loosen the knobs until they disappear. Once the sample is completely clear, slowly tighten the end knob until fringes appear. Do not over-tighten the knob; over-tightening can damage the sample. Stop tightening once the fringe patterns change 2--3 times. Photograph each sample for reference. See Section \ref{data} for images of the fully loaded samples.
 
 \section{Data} \label{data}
-% TODO
+The fully loaded samples are shown below in Figures \ref{fig:hole_3}, \ref{fig:notch_3}, and \ref{fig:arch_4}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=4in]{images/hole_3}
+\caption{The light-field circular polariscope set up with a fully loaded ``hole'' sample.}
+\label{fig:hole_3}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=4in,angle=180]{images/notch_3}
+\caption{The light-field circular polariscope set up with a fully loaded ``notch'' sample.}
+\label{fig:notch_3}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=4in,angle=180]{images/arch_4}
+\caption{The light-field circular polariscope set up with a fully loaded ``arch'' sample.}
+\label{fig:arch_4}
+\end{figure}
 
 \section{Analysis} \label{analysis}
-% TODO
+\textbf{Question 1:}
 
-\section{Conclusion} \label{conclusion-section}
-% TODO
+The normalized stress equations for a sample with a hole in it, derived by dividing both sides of the equation by $\sigma_0$, are shown below.
+\begin{align}
+\frac{\sigma_r}{\sigma_0}&=\frac{1}{2}\left[\left(1-\frac{a^2}{r^2}\right)-\left(1-\frac{4a^2}{r^2}+\frac{3a^4}{r^4}\right)\cos2\theta\right] \\
+\frac{\sigma_\theta}{\sigma_0}&=\frac{1}{2}\left[\left(1+\frac{a^2}{r^2}\right)+\left(1+\frac{3a^4}{r^4}\right)\cos2\theta\right] \label{eqn:norm_sigma_theta} \\
+\frac{\tau_{r\theta}}{\sigma_0}&=\frac{1}{2}\left(1+\frac{2a^2}{r^2}-\frac{3a^4}{r^4}\right)\sin2\theta
+\end{align}
+
+Given $\theta=\qty{0}{\degree}$ and an arbitrary value for $a$, we can graph the normalized stress curves with respect to $r$ as shown in Figures \ref{fig:norm_sigma_r}, \ref{fig:norm_sigma_theta}, and \ref{fig:norm_tau_rtheta}. The domain of the graphs ranges from $r=a$ to $r=5a$.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+		\includegraphics[width=1.0\textwidth]{images/Graphs/sigma_r_normalized}
+		\caption{The normalized $\sigma_r$ curve with respect to $r$ from $r=a$ to $r=5a$.}
+		\label{fig:norm_sigma_r}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+		\includegraphics[width=1.0\textwidth]{images/Graphs/sigma_theta_normalized}
+		\caption{The normalized $\sigma_\theta$ curve with respect to $r$ from $r=a$ to $r=5a$.}
+		\label{fig:norm_sigma_theta}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=3in]{images/Graphs/tau_rtheta_normalized}
+\caption{The normalized $\tau_{r\theta}$ curve with respect to $r$ from $r=a$ to $r=5a$.}
+\label{fig:norm_tau_rtheta}
+\end{figure}
+
+According to Figures \ref{fig:norm_sigma_r}, \ref{fig:norm_sigma_theta}, and \ref{fig:norm_tau_rtheta}, the internal stress reaches its maximum value in Figure \ref{fig:norm_sigma_theta}, \ie the $\sigma_\theta$ stress contributes most to the internal stress along the line $\theta=\qty{0}{\degree}$. The output from this MATLAB script is as follows:
+
+\begin{tcolorbox}
+\begin{verbatim}
+Given a = 2 [in]...
+sigma_r_n_max = 0.375 [] @ r = 2.83 [in]
+sigma_theta_n_max = 3 [] @ r = 2 [in]
+tau_rtheta_n = 0 [] @ r = 2 [in]
+\end{verbatim}
+\end{tcolorbox}
+
+From this output, we observe the maximum value of the normalized $\sigma_\theta$ curve is \num{3}. Furthermore, the stress concentration factor is defined as
+
+\begin{align}
+K\coloneqq\frac{\sigma_\text{max}\text{ or }\tau_\text{max}}{\sigma_0} \label{eqn:def_K}
+\end{align}
+
+Plugging in the maximum value of the normalized $\sigma_\theta$ curve into Equation \ref{eqn:norm_sigma_theta}, we get the equations
+
+\begin{align}
+\frac{\sigma_\text{max}}{\sigma_0}&=3 \\
+\sigma_\text{max}&=3\sigma_0 \label{eqn:sigma_max}
+\end{align}
+
+We can now substitute Equation \ref{eqn:sigma_max} into Equation \ref{eqn:def_K}, and we see that the stress concentration factor, $K$, is
+
+\begin{align}
+K&=\frac{3\sigma_0}{\sigma_0} \\
+K&=3
+\end{align}
+
+In Figures \ref{fig:norm_sigma_r} and \ref{fig:norm_sigma_theta}, we note that the stress rapidly decreases as the measured point of stress moves further from the boundary of the hole. This matches hypothetical observations that the stress if highest and most magnified right at the boundary of discontinuities within a material. In other words, this significantly magnified stress near the surface of a material discontinuity is why nominal imperfections can grow to be catastrophic.
+
+\textbf{Question 2:}
+
+Consider the internal stresses at the boundary of a hole within a sample, \ie $r=a$. It can be shown that $\sigma_r=0$, $\sigma_\theta=\sigma_0\left(1+2\cos2\theta\right)$, and $\tau_{r\theta}=0$. Given these conditions, we can find a ``singular point'' where all internal stresses in the material vanish. For this to be true, $\sigma_\theta$ must be equal to \num{0}, as shown below.
+
+\begin{align}
+0&=\sigma_0\left(1+2\cos2\theta\right) \\
+-\frac{1}{2}&=\cos2\theta \\
+\frac{1}{4}&=\cos^2\theta \\
+\theta&=\cos^{-1}\left({\pm\frac{1}{2}}\right) \\
+\theta&=\frac{\pi}{3}+2{\pi}n,\frac{5\pi}{3}+2{\pi}n,\frac{2\pi}{3}+2{\pi}n,\frac{4\pi}{3}+2{\pi}n\text{, for any integer }n \label{eqn:theta}
+\end{align}
+
+As shown in Equation \ref{eqn:theta}, at the boundary of the hole, the angles \qty{60}{\degree}, \qty{120}{\degree}, \qty{240}{\degree}, and \qty{300}{\degree} have no internal stress.
+
+\textbf{Question 3:}
+
+By substituting in arbitrary values for $\sigma_0$ and $a$, \eg $\sigma_0=1$ and $a=2$, we can graph the stress distributions of $\sigma_r$, $\sigma_\theta$, and $\tau_{r\theta}$. These graphs, generated in MATLAB, are shown in Figures \ref{fig:sigma_r}, \ref{fig:sigma_theta}, and \ref{fig:tau_rtheta}.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+		\includegraphics[width=1.0\textwidth]{images/Graphs/sigma_r}
+		\caption{The stress distribution of $\sigma_r$ plotted with the MATLAB command \texttt{imagesc}.}
+		\label{fig:sigma_r}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+		\includegraphics[width=1.0\textwidth]{images/Graphs/sigma_theta}
+		\caption{The stress distribution of $\sigma_\theta$ plotted with the MATLAB command \texttt{imagesc}.}
+		\label{fig:sigma_theta}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=3in]{images/Graphs/tau_rtheta}
+\caption{The stress distribution of $\tau_{r\theta}$ plotted with the MATLAB command \texttt{imagesc}.}
+\label{fig:tau_rtheta}
+\end{figure}
+
+Using the values of $\sigma_r$, $\sigma_\theta$, and $\tau_{r\theta}$ from these MATLAB graphs, we can calculate the difference in principal stress, $\sigma_{p1}-\sigma_{p2}$, with the equation
+
+\begin{align}
+\sigma_{p1}-\sigma_{p2}=2\sqrt{\left(\frac{\sigma_r-\sigma_\theta}{2}\right)^2+\tau_{r\theta}^2}
+\end{align}
+
+The graph of the difference in principal stresses is shown in Figure \ref{fig:principal_stress_diff}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=4in]{images/Graphs/principal_stress_diff}
+\caption{The stress distribution of $\sigma_{p1}-\sigma_{p2}$ plotted with the MATLAB command \texttt{imagesc}.}
+\label{fig:principal_stress_diff}
+\end{figure}
+
+By comparing Figure \ref{fig:principal_stress_diff} to our experimental photo of the sample with a hole in it, Figure \ref{fig:hole_3}, we can see similarities between the theoretical stress distribution and the actual photoelastic stress distribution, specifically, if you rotate Figure \ref{fig:hole_3} \qty{90}{\degree}. Perhaps the most notable resemblance comes from the stress rings at $\theta=\qty{0}{\degree},
+\qty{180}{\degree}$ in Figure \ref{fig:principal_stress_diff} compared to the stress rings visible on the top and bottom of the hole (closest to the long edges) in Figure \ref{fig:hole_3}. You can also see in Figure \ref{fig:hole_3} the development of the stresses shown at $\theta=\qty{90}{\degree},\qty{240}{\degree}$ of the hole in Figure \ref{fig:principal_stress_diff}.
+
+\section{Conclusion} \label{conclusion}
+In this lab, we found used a light-field circular polariscope with three different types of samples to visually demonstrate the effect of stress concentrators on internal stress. Additionally, using MATLAB, we analyzed the normalized internal stress curves, and used the \texttt{imagesc} function to plot colored stress distributions that matched the stress rings we observed in our experimental photographs.
 
 \end{document}
